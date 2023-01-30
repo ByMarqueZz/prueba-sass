@@ -1,0 +1,25 @@
+@mixin flexposition($direction:row, $justifycontent:center, $alignitem:center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifycontent;
+    align-items: $alignitem;
+}
+
+@mixin navigation() {
+    &-list {
+        @include flexposition(row, space-around, center);
+        height: 100%;
+    }
+    &-item {
+        list-style-type: none;
+    }
+    &-link {
+        color: color(primary);
+        font-size: size(xs);
+        text-decoration: none;
+        transition: all .5s;
+        &-hover {
+            color: lighten(color(quaternary), 10%);
+        }
+    }
+}

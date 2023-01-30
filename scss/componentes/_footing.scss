@@ -1,0 +1,13 @@
+.footer {
+    &-content {
+        @include flexposition(row, space-around);
+        gap: 2rem;
+        &-link {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    &-title {
+        font-size:size(md);
+    }
+}

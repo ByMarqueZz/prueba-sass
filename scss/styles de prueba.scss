@@ -1,0 +1,27 @@
+@mixin h3style {
+    background-color: red;
+    color: white;
+    font-size: 20px;
+}
+
+@import 'layout/header.scss';
+
+$colors: #f00, #0f0, #00f, #ff0, #f0f, #0ff, #000, #fff, #f0f, #0ff;
+
+@function get-color($i) {
+    @return nth($colors, $i);
+}
+
+@for $i from 1 through 10 {
+    .h3-#{$i} {
+        background-color: get-color($i);
+        border: 1px solid black;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);
+    grid-template-rows: repeat(4, min-content);
+    grid-row-gap: 1.6rem;
+}
